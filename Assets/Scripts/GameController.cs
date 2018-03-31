@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameController: MonoBehaviour {
 	private Player player1;
 	private Player player2;
+	private bool gameIsOver;
+	private int winnerNumber;
 	public static GameController instance;
 
 	void Awake() {
@@ -31,5 +33,21 @@ public class GameController: MonoBehaviour {
 
 	public Player getPlayer2() {
 		return this.player2;
+	}
+
+	public void setGameIsOver(bool gameIsOver) {
+		this.gameIsOver = gameIsOver;
+	}
+
+	public bool getGameIsOver() {
+		return this.gameIsOver;
+	}
+
+	public void setWinnerNumber (int number) {
+		this.winnerNumber = number;
+	}
+
+	public int getWinnerNumber() {
+		return this.winnerNumber;
 	}
 }

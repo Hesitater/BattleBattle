@@ -16,12 +16,26 @@ public class SceneSwitch : MonoBehaviour {
 			}
 		case "Play Field":
 			{
-				SceneManager.LoadSceneAsync ("Play Field2");
+				SceneManager.LoadSceneAsync ("Transition");
 				break;
 			}
-		case "Play Field2":
+		case "Transition":
+			{
+				SceneManager.LoadSceneAsync ("Play Field 2");
+				break;
+			}
+		case "Play Field 2":
 			{
 				SceneManager.LoadSceneAsync ("Turn Check");
+				break;
+			}
+		case "Turn Check":
+			{
+				if (!GameController.instance.getGameIsOver ()) {
+					SceneManager.LoadSceneAsync ("Play Field");
+				} else {
+					SceneManager.LoadSceneAsync ("Game Result");
+				}
 				break;
 			}
 		case "Game Result":

@@ -6,6 +6,7 @@ public class Character : MonoBehaviour {
 	protected int health = 0;
 	protected int skillPoint = 0;
 	protected bool skillTriggered = false;
+	protected string characterName;
 
 	public void setHealth(int health) {
 		this.health = health;
@@ -30,12 +31,17 @@ public class Character : MonoBehaviour {
 	public bool getSkillTriggered() {
 		return this.skillTriggered;
 	}
+
+	public string getName() {
+		return this.characterName;
+	}
 }
 
 public class Liar : Character {
 	public Liar() {
 		this.health = 4;
 		this.skillPoint = 3;
+		this.characterName = "骗子";
 	}
 }
 
@@ -51,5 +57,6 @@ public class Vanilla : Character {
 	public Vanilla() {
 		this.health = 5;
 		this.skillPoint = 3;
+		this.characterName = "渣渣辉";
 	}
 }
