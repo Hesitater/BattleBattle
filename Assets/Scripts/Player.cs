@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player {
 	private int playerNumber; // 1 or 2
 	private Character character;
 	private int dicePoint = 0;
@@ -17,12 +17,12 @@ public class Player : MonoBehaviour {
 	}
 
 	public void triggerSkill() {
-		if (this.character.getSkillPoint () == 0) {
+		if (this.hp == 0) {
 			Debug.Log ("No more skills to trigger.");
 			return;
 		}
 		this.character.setSkillTriggered (true);
-		this.character.setSkillPoint (this.character.getSkillPoint () - 1);
+		this.sp--;
 	}
 
 	public void untriggerSkill() {

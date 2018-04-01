@@ -40,7 +40,7 @@ public class SceneSwitch : MonoBehaviour {
 			}
 		case "Game Result":
 			{
-				SceneManager.LoadSceneAsync ("Character Selection");
+				SceneManager.LoadSceneAsync ("Character Selections");
 				break;
 			}
 		}

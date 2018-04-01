@@ -2,23 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour {
-	protected int health = 0;
-	protected int skillPoint = 0;
+public class Character {
+	protected int health;
+	protected int skillPoint;
 	protected bool skillTriggered = false;
 	protected string characterName;
-
-	public void setHealth(int health) {
-		this.health = health;
-	}
 
 	public int getHealth() {
 		return this.health;
 	}
-
-	public void setSkillPoint(int point) {
-		this.skillPoint = point;
-	} 
 
 	public int getSkillPoint() {
 		return this.skillPoint;

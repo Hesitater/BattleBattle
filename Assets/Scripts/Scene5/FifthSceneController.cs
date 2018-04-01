@@ -47,6 +47,9 @@ public class FifthSceneController : MonoBehaviour {
 			textHP1.text = "血量：" + player1.hp.ToString () + " - " + diceDifference.ToString ();
 			textHP2.text = "血量：" + player2.hp.ToString ();
 			player1.hp -= diceDifference;
+		} else { // Draw
+			textHP1.text = "血量：" + player1.hp.ToString ();
+			textHP2.text = "血量：" + player2.hp.ToString ();
 		}
 		// Check whether game is over
 		if (player1.hp <= 0) {
@@ -59,13 +62,16 @@ public class FifthSceneController : MonoBehaviour {
 		}
 	}
 
+	// Set skill affect according to the player's chosen character
 	private void settleSkill(Player player) {
 		if (!player.getCharacter ().getSkillTriggered ())
 			return;
 		if (player.getCharacter ().getName () == "骗子") {
 			this.switchDice = !this.switchDice;
 		} else if (player.getCharacter ().getName () == "渣渣辉") {
-			player.setDicePoint (player.getDicePoint () + 1);
+			if (player.getDicePoint () < 6) {
+				player.setDicePoint (player.getDicePoint () + 1);
+			}
 		}
 	}
 }
